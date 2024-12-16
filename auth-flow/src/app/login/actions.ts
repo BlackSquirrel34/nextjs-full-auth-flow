@@ -1,12 +1,12 @@
 "use server";
 
 import { z } from "zod";
-// import { createSession, deleteSession } from "../lib/session";
-// import { redirect } from "next/navigation";
+import { createSession, deleteSession } from "../lib/session";
+import { redirect } from "next/navigation";
 
 const testUser = {
   id: "1",
-  email: "contact@cosdensolutions.io",
+  email: "myemail@world.com",
   password: "12345678",
 };
 
@@ -27,9 +27,9 @@ export async function login(prevState: any, formData: FormData) {
     };
   }
 
-  // const { email, password } = result.data;
+  const { email, password } = result.data;
 
-  /*
+  
   if (email !== testUser.email || password !== testUser.password) {
     return {
       errors: {
@@ -43,10 +43,8 @@ export async function login(prevState: any, formData: FormData) {
   redirect("/dashboard");
 }
 
-*/
+
 export async function logout() {
-    /*
   await deleteSession();
   redirect("/login");
-  */
 }
